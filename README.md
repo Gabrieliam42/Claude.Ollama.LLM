@@ -1,4 +1,4 @@
-# Claude.Ollama.LLM for Windows
+# Claude.Ollama.LLM
 
 Windows launcher for running `Claude` locally, offline on your own PC via local Ollama server and local LLMs, with a model selector.
 
@@ -18,7 +18,7 @@ Windows launcher for running `Claude` locally, offline on your own PC via local 
 ## Requirements
 
 - Windows
-- Ollama installed locally
+- Ollama installed locally. PowerShell command: `irm https://ollama.com/install.ps1 | iex`
 - Claude CLI installed and available on `PATH`
 - Installed Ollama `tools capable` models, for example `glm-4.7-flash:latest`, a smaller model such as `qwen3.5:latest`, or a larger model such as `gpt-oss-20b:latest`
 - Python 3.12+ if running the `.py` file directly
