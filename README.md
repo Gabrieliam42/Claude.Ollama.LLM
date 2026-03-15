@@ -4,8 +4,7 @@ Windows launcher for running `Claude` locally, offline on your own PC via local 
 
 ## What it does
 
-- Starts `Ollama`.
-- Reads installed Ollama models with `ollama list`.
+- Starts reading installed Ollama models with `ollama list`.
 - Filters out models that do not support `tools` via `ollama show -v`.
 - Deduplicates aliases that share the same Ollama model ID, preferring `:latest` when present.
 - Launches `claude --model <selected-model>` with:
