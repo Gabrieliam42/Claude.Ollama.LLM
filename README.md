@@ -1,6 +1,6 @@
 # Claude.Ollama.LLM
 
-Windows launcher for running `Claude` locally and offline on your own PC against a local Ollama server and local LLMs, with a dark Tk model picker.
+Windows launcher for running `Claude` locally, offline on your own PC via local Ollama server and local LLMs, with a model selector.
 
 ## What it does
 
@@ -15,12 +15,14 @@ Windows launcher for running `Claude` locally and offline on your own PC against
   - `ANTHROPIC_AUTH_TOKEN=ollama`
   - `ANTHROPIC_API_KEY=`
 
+[Download Latest Release (v1.0.0)](https://github.com/Gabrieliam42/Claude.Ollama.LLM/releases/download/v1.0.0/Claude.Ollama.LLM.exe)
+
 ## Requirements
 
 - Windows
 - Ollama installed locally
 - Claude CLI installed and available on `PATH`
-- Installed Ollama models, for example `glm-4.7-flash:latest`, a smaller model such as `qwen3.5:latest`, or a larger model such as `gpt-oss-20b:latest`
+- Installed Ollama `tools capable` models, for example `glm-4.7-flash:latest`, a smaller model such as `qwen3.5:latest`, or a larger model such as `gpt-oss-20b:latest`
 - Python 3.12+ if running the `.py` file directly
 - `ollama_path.py` next to `Claude.Ollama.LLM.py`
 
