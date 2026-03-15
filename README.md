@@ -1,6 +1,6 @@
 # Claude.Ollama.LLM
 
-Windows launcher for running `claude` against a local Ollama server with a dark Tk model picker.
+Windows launcher for running `Claude` locally and offline on your own PC against a local Ollama server and local LLMs, with a dark Tk model picker.
 
 ## What it does
 
@@ -42,4 +42,4 @@ Or run the packaged executable from the repository Releases page.
 ## Notes
 
 - The model list can take a moment to appear because the script checks tool support for each installed model.
-- The script is intended for local Ollama-backed Claude CLI usage on Windows, not for deployment or server use.
+- The script is intended for local, offline Ollama-backed Claude CLI usage on Windows, not cloud-hosted inference, deployment, or server use.
