@@ -4,11 +4,11 @@
 import ctypes
 import os
 import re
+import shutil
 import subprocess
 import sys
 import time
-
-from ollama_path import resolve_ollama_executable
+from pathlib import Path
 
 PREFERRED_MODELS = (
     "glm-4.7-flash:latest",
@@ -22,6 +22,47 @@ PREFERRED_MODELS = (
     "mistral-nemo:12b-instruct-2407-q8_0",
     "mistral-small:22b-instruct-2409-q6_K",
 )
+
+
+def _candidate_paths():
+    configured_path = os.environ.get("OLLAMA_EXE")
+    if configured_path:
+        yield Path(os.path.expandvars(configured_path)).expanduser()
+
+    if getattr(sys, "frozen", False):
+        base_dir = Path(sys.executable).resolve().parent
+    else:
+        base_dir = Path(__file__).resolve().parent
+
+    yield base_dir / "ollama.exe"
+    yield base_dir / "Ollama" / "ollama.exe"
+
+    resolved_from_path = shutil.which("ollama.exe") or shutil.which("ollama")
+    if resolved_from_path:
+        yield Path(resolved_from_path)
+
+    local_app_data = os.environ.get("LOCALAPPDATA")
+    if local_app_data:
+        yield Path(local_app_data) / "Programs" / "Ollama" / "ollama.exe"
+
+    program_files = os.environ.get("ProgramFiles")
+    if program_files:
+        yield Path(program_files) / "Ollama" / "ollama.exe"
+
+    program_files_x86 = os.environ.get("ProgramFiles(x86)")
+    if program_files_x86:
+        yield Path(program_files_x86) / "Ollama" / "ollama.exe"
+
+
+def resolve_ollama_executable():
+    for candidate in _candidate_paths():
+        if candidate.is_file():
+            return str(candidate)
+
+    raise FileNotFoundError(
+        "Could not locate ollama.exe. Set OLLAMA_EXE, place ollama.exe next to "
+        "this script, add it to PATH, or install Ollama in a standard Windows location."
+    )
 
 
 def run_as_admin(file_path, parameters=None, show_cmd=0):
