@@ -1,4 +1,4 @@
-# Claude.Ollama.LLM Windows
+# Claude.Ollama.LLM for Windows
 
 Windows launcher for running `Claude` locally, offline on your own PC via local Ollama server and local LLMs, with a model selector.
 
