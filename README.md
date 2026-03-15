@@ -4,12 +4,10 @@ Windows launcher for running `Claude` locally, offline on your own PC via local 
 
 ## What it does
 
-- Starts `ollama serve` with elevation.
+- Starts `ollama serve`.
 - Reads installed Ollama models with `ollama list`.
-- Filters out models that do not advertise `tools` support via `ollama show -v`.
+- Filters out models that do not support `tools` via `ollama show -v`.
 - Deduplicates aliases that share the same Ollama model ID, preferring `:latest` when present.
-- Shows a dark anthracite Tkinter model picker with model sizes.
-- Prioritizes a small preferred-model list at the top.
 - Launches `claude --model <selected-model>` with:
   - `ANTHROPIC_BASE_URL=http://localhost:11434`
   - `ANTHROPIC_AUTH_TOKEN=ollama`
