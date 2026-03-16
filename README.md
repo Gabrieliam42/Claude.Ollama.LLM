@@ -16,16 +16,13 @@ Windows launcher for running `Claude` locally, offline on your own PC via local 
 
 ## Requirements
 
-- Windows
-- Ollama installed locally. PowerShell command: `irm https://ollama.com/install.ps1 | iex`
-- Claude CLI installed. PowerShell command: `winget install Anthropic.ClaudeCode`
-- Installed Ollama `tools capable` models, for example `glm-4.7-flash:latest`, a smaller model such as `qwen3.5:latest`, or a larger model such as `gpt-oss-20b:latest`
-- Python 3.12+ if running the `.py` file directly
+- Ollama. PowerShell command: `irm https://ollama.com/install.ps1 | iex`
+- Claude CLI. PowerShell command: `winget install Anthropic.ClaudeCode`
+- Installed `tools capable` LLM models, for example `glm-4.7-flash:latest`, a smaller model such as `qwen3.5:latest`, or a larger model such as `gpt-oss-20b:latest` or others.
 
-## Files
+- Python 3.12+ only if running the `.py` file directly
 
-- `Claude.Ollama.LLM.py`: source script
-- `Claude.Ollama.LLM.exe`: standalone PyInstaller build in Releases
+
 
 ## Usage
 
@@ -39,5 +36,5 @@ Or run the packaged executable from the repository Releases page.
 
 ## Notes
 
-- The model list can take a moment to appear because the script checks tool support for each installed model.
-- The script is intended for local, offline Ollama-backed Claude CLI usage on Windows, not cloud-hosted inference, deployment, or server use.
+- The Model List can take a moment to appear because the script checks tool support for each installed model.
+- The script is intended for local, offline Ollama-backed Claude CLI usage on Windows, not cloud-hosted inference, deployment.
