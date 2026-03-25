@@ -1,6 +1,6 @@
 # Claude.Ollama.LLM
 
-Windows launcher for running `Claude` Locally, OFFLINE on your own PC via local Ollama server and Local LLMs, with a model selector.
+Windows launcher for running `Claude CLI` Locally, OFFLINE on your own PC via local Ollama server and Local LLMs, with a model selector.
 
 ## What it does
 
